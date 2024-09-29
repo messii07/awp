@@ -1,0 +1,70 @@
+*Webform1.aspx*
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication11.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:TreeView ID="TreeView1" runat="server">
+                <Nodes>
+                    <asp:TreeNode Text="Bcom" Value="Bcom" Checked="True" ShowCheckBox="True">
+                        <asp:TreeNode Text="Fybcom" Value="Fybcom" Checked="True" ShowCheckBox="True"></asp:TreeNode>
+                        <asp:TreeNode Text="sybcom" Value="sybcom" Checked="True" ShowCheckBox="True"></asp:TreeNode>
+                        <asp:TreeNode Text="tybocm" Value="tybocm" Checked="True" ShowCheckBox="True"></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="bscit" Value="bscit" Checked="True" ShowCheckBox="True">
+                        <asp:TreeNode Text="fyit" Value="fyit" Checked="True" ShowCheckBox="True"></asp:TreeNode>
+                        <asp:TreeNode Text="syit" Value="tyit" Checked="True" ShowCheckBox="True"></asp:TreeNode>
+                        <asp:TreeNode Text="tyit" Value="tyit" Checked="True" ShowCheckBox="True"></asp:TreeNode>
+                    </asp:TreeNode>
+                </Nodes>
+            </asp:TreeView>
+        </div>
+        <asp:DataList ID="DataList1" runat="server">
+            <ItemTemplate>
+                <%# Eval("text") %>>
+            </ItemTemplate>
+        </asp:DataList>
+        <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+    </form>
+</body>
+</html>
+
+
+*WebForm1.aspx.cs *
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication11
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            TreeNodeCollection T;
+            T = TreeView1.CheckedNodes;
+            DataList1.DataSource = T;
+            DataList1.DataBind();
+            DataList1.Visible = true;
+        }
+    }
+}

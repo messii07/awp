@@ -1,0 +1,50 @@
+using System;
+using System.Threading; // Required for using Thread.Sleep()
+
+class PrimeCheck
+{
+    static void Main()
+    {
+        int num, counter;
+        bool isPrime = true;
+
+        Console.WriteLine("Enter Number:");
+        num = int.Parse(Console.ReadLine());
+
+        // Adding delay before processing
+        Thread.Sleep(2000);  // 2 seconds delay
+
+        if (num == 1)
+        {
+            // Adding delay before the output
+            Thread.Sleep(2000);  // 2 seconds delay
+            Console.WriteLine(num + " is neither prime nor composite.");
+        }
+        else
+        {
+            for (counter = 2; counter <= Math.Sqrt(num); counter++)
+            {
+                if (num % counter == 0)
+                {
+                    isPrime = false; // Not a prime number if any divisor is found
+                    break; // No need to check further
+                }
+            }
+
+            // Adding delay before the result output
+            Thread.Sleep(2000);  // 2 seconds delay
+
+            if (isPrime)
+            {
+                Console.WriteLine(num + " is a prime number.");
+            }
+            else
+            {
+                Console.WriteLine(num + " is not a prime number.");
+            }
+        }
+
+        // Adding delay after the output
+        Thread.Sleep(2000);  // 2 seconds delay
+    }
+}

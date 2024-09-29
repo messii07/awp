@@ -1,0 +1,73 @@
+WebForm1.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication6.WebForm1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title></title>
+</head>
+<body>
+<form id="form1" runat="server">
+<div>
+<asp:Label ID="Label1" runat="server" Text="Enter Name:"></asp:Label>
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*Name Required" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+</div>
+<p>
+<asp:Label ID="Label2" runat="server" Text="Enter Password:"></asp:Label>
+<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*Password Required" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+</p>
+<p>
+<asp:Label ID="Label3" runat="server" Text="Confirm password:"></asp:Label>
+<asp:TextBox ID="TextBox3" runat="server"
+OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="*Password required" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+<asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox2" ControlToValidate="TextBox3" ErrorMessage="*Enter same password" ForeColor="#CC3300"></asp:CompareValidator>
+</p>
+<p>
+<asp:Label ID="Label4" runat="server" Text="Enter Age:"></asp:Label>
+<asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox4" ErrorMessage="*Enter Age" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox4" ErrorMessage="*Age required should be between 21 to 30" ForeColor="#CC3300" MaximumValue="30" MinimumValue="21" Type="Integer"></asp:RangeValidator>
+</p>
+<p>
+<asp:Label ID="Label5" runat="server" Text="Enter Email:"></asp:Label>
+<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" ErrorMessage="*Email required" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox5" ErrorMessage="*Email should be proper" ForeColor="#CC3300" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-
+.]\w+)*"></asp:RegularExpressionValidator>
+</p>
+<p>
+<asp:Label ID="Label6" runat="server" Text="Enter User ID:"></asp:Label>
+<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox6" ErrorMessage="*User ID required" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+</p>
+<p>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+</p>
+</form>
+</body>
+</html> 
+
+
+WebForm1.aspx.cs 
+using System;
+using System.Collections.Generic;
+using System.Linq; using System.Web; using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace WebApplication6
+{
+public partial class WebForm1 : System.Web.UI.Page
+{
+protected void Page_Load(object sender, EventArgs e)
+{
+}
+protected void TextBox3_TextChanged(object sender, EventArgs e)
+{
+}
+protected void Button1_Click(object sender, EventArgs e)
+{
+Response.Write("Submitted");
+}
+}
+}

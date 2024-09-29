@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+	<Ad>
+		<ImageUrl>https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg</ImageUrl>
+		<Navigateurl>https://www.google.com</Navigateurl>
+		<AlternateText>Flower</AlternateText>
+		<Impressions>50</Impressions>
+		<Keywords>flower</Keywords>
+	</Ad>
+	<Ad>
+		<ImageUrl>https://www.shutterstock.com/image-photo/calm-weather-on-sea-ocean-600nw-2212935531.jpg</ImageUrl>
+		<Navigateurl>https://www.google.com</Navigateurl>
+		<AlternateText>Nature</AlternateText>
+		<Impressions>50</Impressions>
+		<Keywords>nature</Keywords>
+	</Ad>
+
+</Advertisements>

@@ -1,0 +1,19 @@
+using System;
+using System.Threading;  // Required for using Thread.Sleep()
+
+class ExampleForEach
+{
+    public static void Main()
+    {
+        string[] str = { "shield", "Evaluation", "DX" };
+
+        foreach (String s in str)
+        {
+            Console.WriteLine(s);
+
+            // Adding delay of 2 seconds between each output
+            Thread.Sleep(2000);
+        }
+    }
+}
+
